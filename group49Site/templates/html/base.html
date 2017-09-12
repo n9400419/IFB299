@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart city Project Website</title>
+</head>
+    <h1>Smart city Project Website</h1>
+<body>
+  <a href="{% url 'Home' %}">Go Home</a>
+  <a href="{% url 'About' %}">About</a>
+  <a href="{% url 'Login' %}">Login</a>
+  <a href="{% url 'Register' %}">Register</a>
+{% block content %}
+  <h1> You must login to use the website...</h1>
+{% endblock %}
+</body>
+</html>
+
+
+
+
