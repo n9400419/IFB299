@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'introduction_page',
     'login',
+    'search',
 ]
 
 MIDDLEWARE = [
@@ -83,7 +84,7 @@ DATABASES = {
         'HOST': '',
         'PORT': '3306',
         'USER': 'root',
-        'PASSWORD': 'team49',
+        'PASSWORD': 'password',
         
     }
 }

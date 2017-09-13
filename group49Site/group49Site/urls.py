@@ -22,5 +22,6 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^home/', include('introduction_page.urls')),
     url(r'^login/', include('login.url_login')),
+    url(r'^search/', include('search.urls')),
     url(r'^admin/', admin.site.urls),
 ]
