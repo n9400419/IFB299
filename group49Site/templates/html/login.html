@@ -2,6 +2,8 @@
 
 {% block title %}Login{% endblock %}
 
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'admin/css/login.css' %}" />
 {% block content %}
   <h2>Login</h2>
  <form class="form" method="post" action="." >{% csrf_token %}
