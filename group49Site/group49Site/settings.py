@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'introduction_page',
     'login',
     'static',
+    'search',
+    'accounts',
 ]
 
 MIDDLEWARE = [
