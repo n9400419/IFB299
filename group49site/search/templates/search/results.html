@@ -1,0 +1,27 @@
+<form method="get" action="/search/results/" class="navbar-form pull-right">
+<input type="text" id="searchBox" class="input-medium search-query" name="query" placeholder="Search">
+<select name="search_type">
+    <option value="park">Parks</option>
+    <option value="college">Colleges</option>
+    <option value="industry">Industries</option>
+    <option value="library">Libraries</option>
+	<option value="hotel">Hotels</option>
+	<option value="zoo">Zoos</option>
+	<option value="museum">Museums</option>
+	<option value="restaurant">Resaurants</option>
+	<option value="mall">Malls</option>
+ </select>
+<input type="submit" class="btn" value="Search" >
+</form>
+
+
+{% if results %}
+	<h5>Results:</h5>
+    <ul>
+    {% for r in results %}
+        <li>{{ r.name }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No results available.</p>
+{% endif %}
