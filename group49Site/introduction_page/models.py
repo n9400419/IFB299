@@ -10,5 +10,5 @@ class userRegisterAccount(models.Model):
     fullname = models.CharField(max_length=250)
     email = models.EmailField(max_length=250)
 
-class login_info(models.Model):
+class login(models.Model):
     userRegisterAccount = models.ForeignKey(userRegisterAccount, on_delete=models.CASCADE)
