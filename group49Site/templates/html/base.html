@@ -9,13 +9,14 @@
 </head>
     <h1>Smart city Project Website</h1>
 <body>
+  <h2>Welcome.., {{ user.username }}</h2>
 
   <a href="{% url 'About' %}">About</a>
+  <a href="{% url 'Home' %}">Go Home</a>
+  <a href="{% url 'Register' %}">Register</a>
 
 {% block content %}
-  <a href="{% url 'Home' %}">Go Home</a>
   <a href="{% url 'Login' %}">Login</a>
-  <a href="{% url 'Register' %}">Register</a>
   <h1> You must login to use the website...</h1>
 {% endblock %}
 </body>

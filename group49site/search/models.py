@@ -1,56 +1,39 @@
 from django.db import models
 
 # Create your models here.
-class College(models.Model):
+
+class CityObject(models.Model):
     name = models.CharField(max_length=50)
     address = models.CharField(max_length=100)
+    email_address = models.EmailField(max_length=50)
+
+    class Meta:
+        abstract = True
+
+class College(CityObject):
     departments = models.EmailField(max_length=50)
-    email_address = models.EmailField(max_length=50)
-    
-class Library(models.Model):
-    name = models.CharField(max_length=50)
-    address = models.CharField(max_length=100)
+
+class Library(CityObject):
     phone_number = models.CharField(max_length=10)
-    email_address = models.EmailField(max_length=50)
     
-class Industry(models.Model):
-    name = models.CharField(max_length=50)
-    address = models.CharField(max_length=100)
+class Industry(CityObject):
     industry_type = models.EmailField(max_length=50)
-    email_address = models.EmailField(max_length=50)
     
-class Hotel(models.Model):
-    name = models.CharField(max_length=50)
-    address = models.CharField(max_length=100)
+class Hotel(CityObject):
     phone_number = models.CharField(max_length=10)
-    email_address = models.EmailField(max_length=50)
     
-class Park(models.Model):    
-    name = models.CharField(max_length=50)
-    address = models.CharField(max_length=100)
+class Park(CityObject):
     phone_number = models.CharField(max_length=10)
-    email_address = models.EmailField(max_length=50)
+    a = models.CharField(max_length=1, blank=True, null=True)
     
-class Zoo(models.Model):
-    name = models.CharField(max_length=50)
-    address = models.CharField(max_length=100)
+class Zoo(CityObject):
     phone_number = models.CharField(max_length=10)
-    email_address = models.EmailField(max_length=50)
     
-class Museum(models.Model):
-    name = models.CharField(max_length=50)
-    address = models.CharField(max_length=100)
+class Museum(CityObject):
     phone_number = models.CharField(max_length=10)
-    email_address = models.EmailField(max_length=50)
     
-class Restaurant(models.Model):
-    name = models.CharField(max_length=50)
-    address = models.CharField(max_length=100)
+class Restaurant(CityObject):
     phone_number = models.CharField(max_length=10)
-    email_address = models.EmailField(max_length=50)
-    
-class Mall(models.Model):
-    name = models.CharField(max_length=50)
-    address = models.CharField(max_length=100)
+
+class Mall(CityObject):
     phone_number = models.CharField(max_length=10)
-    email_address = models.EmailField(max_length=50)

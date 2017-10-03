@@ -1,22 +1,17 @@
 
-from django.shortcuts import HttpResponse
+from django.shortcuts import HttpResponse, render
 from django.template import loader
 
 
 
 def homePageView(request):
 
-    template = loader.get_template('base.html')
-
-    return HttpResponse(template.render({},request))
+   return render(request, 'base.html')
 
 
 def aboutPageView(request):
 
-    template = loader.get_template('about.html')
-
-    return HttpResponse(template.render({},request))
-
+    return render(request, 'about.html')
 
 
 
