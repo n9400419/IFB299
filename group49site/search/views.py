@@ -7,17 +7,18 @@ from django.http import HttpResponse
 
 from django.template import loader
 
-from .models import College, Library, Industry, Hotel, Park, Zoo, Museum, Restaurant, Mall
+from .models import College, Library, Industry, Hotel, CityInformation
 
-type_list = {'park':Park,
+type_list = {#'park':Park,
              'library':Library,
              'college':College,
              'industry':Industry,
              'hotel':Hotel,
-             'zoo':Zoo,
-             'museum':Museum,
-             'restaurant':Restaurant,
-             'mall':Mall
+             'city information':CityInformation
+             #'zoo':Zoo,
+             #'museum':Museum,
+             #'restaurant':Restaurant,
+             #'mall':Mall
 }
 
 

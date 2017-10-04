@@ -29,11 +29,13 @@ def submit_login(request):
     password = request.POST.get("password")
 
     user = get_user_model()
-    password_check = user.objects.raw("SELECT id, password FROM auth_user WHERE username = '" + username + "'")[0].password
+    password_check = user.objects.raw("SELECT id, password FROM auth_user WHERE username = '" +
+                                      username + "'")[0].password
 
     print(password_check)
     if(password == password_check):
         print("access granted")
+        return
     else:
         print("access denied")
     return HttpResponse('swas')
