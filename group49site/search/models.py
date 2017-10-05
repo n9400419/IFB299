@@ -6,60 +6,32 @@ from django.db import models
 class CityObject(models.Model):
     name = models.CharField(max_length=50)
     address = models.CharField(max_length=100)
-    email_address = models.EmailField(max_length=50)
+    email = models.EmailField(max_length=50)
 
-class CityObject(models.Model):
 
+    def get_name(self):
+        return self.name
+
+    @staticmethod
+    def get_city_objects(search_type, object_type, query):
+        results = object_type.objects.raw("SELECT * FROM search_" + search_type
+                                   + " WHERE name LIKE '%%" + query + "%%'")
+        return results
+
+    def get_address(self):
+        return self.address
+
+    def get_email(self):
+        return self.email
 
     class Meta:
         abstract = True
 
-class College(CityObject):
-    departments = models.EmailField(max_length=50)
-
-class Library(CityObject):
-    phone_number = models.CharField(max_length=10)
-    
-class Industry(CityObject):
-    industry_type = models.EmailField(max_length=50)
-    
-class Hotel(CityObject):
-    phone_number = models.CharField(max_length=10)
-    
-class Park(CityObject):
-    phone_number = models.CharField(max_length=10)
-    a = models.CharField(max_length=1, blank=True, null=True)
-    
-class Zoo(CityObject):
-    phone_number = models.CharField(max_length=10)
-    
-class Museum(CityObject):
-    phone_number = models.CharField(max_length=10)
-    
-class Restaurant(CityObject):
-    phone_number = models.CharField(max_length=10)
-
-class Mall(CityObject):
-    phone_number = models.CharField(max_length=10)
-
-    name = models.CharField(max_length=50)
-    address = models.CharField(max_length=100)
-    email = models.EmailField(max_length=50)
-
-    def getName(self):
-        return self.name
-
-    def getAddress(self):
-        return self.address
-
-    def getEmail(self):
-        return self.email
-
 
 class College(CityObject):
-    departments = models.TextField(max_length=50)
+    departments = models.TextField()
 
-    def getDepartments(self):
+    def get_departments(self):
         return self.departments
 
     
@@ -90,17 +62,26 @@ class CityInformation(CityObject):
     def getPhoneNumber(self):
         return self.phoneNumber
 
-# class Park(CityInformation):
-#
-#
-# class Zoo(CityInformation):
-#
-#
-# class Museum(CityInformation):
-#
-#
-# class Restaurant(CityInformation):
-#
-#
-# class Mall(CityInformation):
-#
+    class Meta:
+        abstract = True
+
+
+class Park(CityInformation):
+    pass
+
+
+class Zoo(CityInformation):
+    pass
+
+
+class Museum(CityInformation):
+    pass
+
+
+class Restaurant(CityInformation):
+    pass
+
+
+class Mall(CityInformation):
+    pass
+
