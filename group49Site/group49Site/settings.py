@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'accounts',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,7 +43,7 @@ INSTALLED_APPS = [
     'login',
     'static',
     'search',
-    'accounts',
+    
 ]
 
 MIDDLEWARE = [
@@ -55,7 +56,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'group49Site.urls'
+ROOT_URLCONF = 'group49site.urls'
 
 TEMPLATES = [
     {
@@ -74,7 +75,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'group49Site.wsgi.application'
+WSGI_APPLICATION = 'group49site.wsgi.application'
 
 
 # Database
@@ -139,4 +140,4 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR,"static")
 
 
-
+AUTH_USER_MODEL = 'accounts.User'

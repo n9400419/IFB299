@@ -4,7 +4,7 @@ from django.shortcuts import render_to_response
 from django.contrib.auth import get_user_model
 from django.http import HttpResponseRedirect
 from django.contrib.auth.forms import UserCreationForm
-from introduction_page.models import userRegisterAccount
+
 
 
 def loginPageView(request):
