@@ -9,20 +9,16 @@ from django.template import loader
 
 from .models import College, Library, Industry, Hotel, Zoo, Museum, Restaurant, Mall, Park
 
-type_list = {'park':Park,
-             'library':Library,
-             'college':College,
-             'industry':Industry,
-             'hotel':Hotel,
-             'zoo':Zoo,
-             'museum':Museum,
-             'restaurant':Restaurant,
-             'mall':Mall
-}
-
-
-def search(request):
-    return render(request, 'search/search.html')
+type_list = {'park': Park,
+             'library': Library,
+             'college': College,
+             'industry': Industry,
+             'hotel': Hotel,
+             'zoo': Zoo,
+             'museum': Museum,
+             'restaurant': Restaurant,
+             'mall': Mall
+             }
 
 
 def results(request):
@@ -30,6 +26,8 @@ def results(request):
     search_type = request.GET['search_type']
 
     results = type_list[search_type].get_city_objects(search_type, type_list[search_type], query)
-    
-    context = { 'results' : results }
+
+    context = {'results': results}
     return render(request, 'search/results.html', context)
+
+
