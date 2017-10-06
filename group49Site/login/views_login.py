@@ -34,7 +34,7 @@ def submit_login(request):
         login(request, user)
         return redirect("home")
 
-    return redirect("/login")
+    return redirect("/login")     
 
 
 
