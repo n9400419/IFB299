@@ -60,7 +60,7 @@ ROOT_URLCONF = 'group49site.urls'
 
 TEMPLATES = [
     {
-        #"/Users/Raj/Documents/IFB299/group49Site/templates/html"
+        #"/Users/Raj/Documents/IFB299/group49site/templates/html"
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR,'templates/html')],
         'APP_DIRS': True,
@@ -84,11 +84,11 @@ WSGI_APPLICATION = 'group49site.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'team49',
+        'NAME': 'team_49',
         'HOST': '',
         'PORT': '3306',
         'USER': 'root',
-        'PASSWORD': 'password',
+        'PASSWORD': 'team49',
         
     }
 }
