@@ -1,9 +1,10 @@
 from django.shortcuts import HttpResponse
 from django.template import loader
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, redirect
 from django.contrib.auth import get_user_model
 from django.http import HttpResponseRedirect
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import authenticate, login
 
 
 
@@ -28,17 +29,18 @@ def submit_login(request):
     username = request.POST.get("username")
     password = request.POST.get("password")
 
-    user = get_user_model()
-    password_check = user.objects.raw("SELECT id, password FROM auth_user WHERE username = '" +
-                                      username + "'")[0].password
+    user = authenticate(username=username, password=password)
+    if user is not None:
+        login(request, user)
+        return redirect("home")
 
-    print(password_check)
-    if(password == password_check):
-        print("access granted")
-        return
-    else:
-        print("access denied")
-    return HttpResponse('swas')
+    return redirect("/login")
+
+
+
+
+
+
 
 
 
