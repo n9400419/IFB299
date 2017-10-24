@@ -6,3 +6,5 @@ urlpatterns = [
     url(r'^results/$', views.results, name = 'results'),
 
 ]
+
+

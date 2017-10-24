@@ -1,0 +1,33 @@
+
+
+{% extends 'base.html' %}
+{% block title %}PROFILE PAGE{% endblock %}
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <div class="topnav">
+         <a href="{% url 'Profile' %}">Home</a>
+         <a href="{% url 'ViewHotel' %}">VIEW HOTEL</a>
+         <a href="{% url 'ViewCollege' %}">VIEW COLLEGE</a>
+         <a href="{% url 'ViewLibrary' %}">VIEW LIBRARY</a>
+         <a href="{% url 'ViewIndustry' %}">VIEW INDUSTRY</a>
+    </div>
+    <h1>Welcome... {{ request.user.first_name }}</h1>
+
+
+<body>
+<p>{% for r in results %}
+{{ r.name }}
+{% endfor %}
+</p>
+
+
+</body>
+
+{% endblock %}
+
+

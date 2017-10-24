@@ -25,7 +25,9 @@ urlpatterns = [
     url(r'^login/', include('login.url_login')),
     url(r'^search/', include('search.urls')),
     url(r'^accounts/', include('accounts.urls')),
+    url(r'^profile/', include('accounts.urls')),
     url(r'^admin/', admin.site.urls),
+
 
 ]
 

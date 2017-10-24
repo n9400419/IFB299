@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!--{% load static %}-->
-<link rel="stylesheet" type="text/css" href="../../static/css/base.css" />
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
 <head>
   <meta charset="UTF-8">
-  <title>Smart city Project Website</title>
+
+  <title>Smart city Project Website</title  >
 </head>
     <div class="foo">
     <span class="letter" data-letter="S">S</span>
@@ -30,9 +31,9 @@
     
 <body>
   
+
+{% block content %}
   <div class="topnav">
-  <a href="{% url 'About' %}">About</a>
-<!--{% block content %}-->
   <a href="{% url 'Home' %}">Go Home</a>
   <a href="{% url 'Login' %}">Login</a>
   <a href="{% url 'Register' %}">Register</a>
@@ -40,7 +41,7 @@
   
   
   <div class="welcome-image">
-  <img src="brisbanebanner-1920.jpg"/>
+  <!--<img src="brisbanebanner-1920.jpg"/> -->
   <h2>WELCOME TO SMART CITY.<br />YOUR PERSONALISED GUIDE TO BRISBANE</h2>
   <h3><span>BEFORE YOU BEGIN...<span class='spacer'></span><br /><span class='spacer'></span>YOU MUST LOG IN.</span></h3>
   </div>
