@@ -1,11 +1,8 @@
-- {% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block title %}Login{% endblock %}
-
-{% load static %} --> 
+<!--{% load static %}-->
 <link rel="stylesheet" type="text/css" href="../../static/base.css" />
-<!--{% block content %} --> 
-
 <head>
   <meta charset="UTF-8">
   <title>Smart city Project Website</title>
@@ -31,27 +28,27 @@
     <span class="letter" data-letter="E">E</span>
     </div>
     
+<body>
   
-  <div class="topnav_before">
-  <a href="{% url 'About' %}">About</a>
+  <div class="topnav_after">
 <!--{% block content %}-->
-  <a href="{% url 'Home' %}">Go Home</a>
-  <a href="{% url 'Login' %}">Login</a>
-  <a href="{% url 'Register' %}">Register</a>
+  <a href="{% url 'Home' %}">Home</a>
+  <a href="{% url 'City Information' %}">City Information</a>
+  <a href="{% url 'City Map' %}">City Map</a>
+  <a href="{% url 'User Information' %}">User Type Information</a>
+  <a href="{% url 'Account' %}">My Account</a>
+  <a href="{% url 'Log out' %}">Log Out</a>
   </div>
   
 
-  <body>
-<div class="login-block">
-    <!--{% csrf_token %}-->
-    <h1>Login</h1>
-    <input type="text" value="" placeholder="Username" id="username" />
-    <input type="password" value="" placeholder="Password" id="password" />
-    <button type="button">Submit</button>
-    </div>
-  </body>
 
 
+<!--{% endblock %}--> 
   
-<!--
-{% endblock %} -->
+  
+</body>
+</html>
+
+
+
+
