@@ -4,6 +4,13 @@
 
 
     {% block content %}
+    <div class="topnav_before">
+  <a href="{% url 'Home' %}">Go Home</a>
+  <a href="{% url 'Login' %}">Login</a>
+  <a href="{% url 'Register' %}">Register</a>
+  </div>
+
+
 
   <body>
     <div class="login-block">

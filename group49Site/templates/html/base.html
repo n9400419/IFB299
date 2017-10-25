@@ -25,13 +25,13 @@
     </div>
     
 <body>
+
+  {% block content %}
   <div class="topnav_before">
   <a href="{% url 'Home' %}">Go Home</a>
   <a href="{% url 'Login' %}">Login</a>
   <a href="{% url 'Register' %}">Register</a>
   </div>
-  {% block content %}
-
   
   
   <div class="welcome-image">
