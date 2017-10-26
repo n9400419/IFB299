@@ -10,5 +10,6 @@ urlpatterns = [
     url(r'^about/$', views.aboutPageView, name='About'),
     url(r'^login/$', views_login.loginPageView, name='Login'),
     url(r'^accounts/$', views_accounts.signup, name='Register'),
+
 ]
 
