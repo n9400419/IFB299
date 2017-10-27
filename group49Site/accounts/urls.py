@@ -9,4 +9,6 @@ urlpatterns = [
     url(r'^library/$', views_accounts.library_view, name='ViewLibrary'),
     url(r'^college/$', views_accounts.college_view, name='ViewCollege'),
     url(r'^industry/$', views_accounts.industry_view, name='ViewIndustry'),
+    url(r'^citymap/$', views_accounts.citymap_view, name='ViewCityMap'),
+    url(r'^cityinformation/$', views_accounts.cityinformation_view, name='ViewCityInformation'),
 ]

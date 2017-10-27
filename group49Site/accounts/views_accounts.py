@@ -49,6 +49,13 @@ def industry_view(request):
     context = {'results':results}
     return render(request, 'profile.html', context)
 
+def citymap_view(request):
+
+    return render(request,'citymap.html')
+
+def cityinformation_view(request):
+
+    return render(request,'cityinformation.html')
 
 
 
