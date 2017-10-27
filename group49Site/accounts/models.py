@@ -7,8 +7,9 @@ from django.contrib.auth.models import AbstractUser
 class User(AbstractUser):
     email = models.EmailField(max_length=50)
     address = models.CharField(max_length=100)
+    phone_number = models.CharField(max_length=50)
     #date_of_birth = models.DateField()
-    #phone_number = models.CharField(max_length=50)
+
 
 
 	
