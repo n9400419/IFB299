@@ -21,20 +21,24 @@
 
 
 
-<!-- Zoos, Museums, Malls, and Restaurants.-->
+<!-- View Zoos, Museums, Malls, and Restaurants.-->
 
 <body>
+    <a href="{% url 'ViewZoos' %}" ><button class="button">Zoos</button></a>
+    <a href="{% url 'ViewMalls' %}" ><button class="button">Malls</button></a>
+    <a href="{% url 'ViewMuseums' %}" ><button class="button">Museums</button></a>
+    <a href="{% url 'ViewRestaurants' %}" ><button class="button">Restaurants</button></a>
 
-<p> "Hey There" </p>
+<p>{% for r in results %}
+    {{ r.name }}
+    {{ r.address }}
+    {% endfor %}
+</p>
 
-    <div class="Buttons">
-        <button class="button1">Zoos</button>
-        <button class="button2">Malls</button>
-        <button class="button3">Galleries</button>
-        <button class="button4">Restaurants</button>
-    </div>
 </body>
 
-{% endblock %}
 
+
+
+{% endblock %}
 

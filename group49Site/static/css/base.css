@@ -356,7 +356,7 @@ h2 .spacer {
 
 
 
-.button1 {
+.button {
     background-color: #4CAF50; /* Green */
     border: none;
     color: white;
@@ -368,6 +368,8 @@ h2 .spacer {
     margin: 4px 2px;
     cursor: pointer;
 }
+
+
 
 .button2 {background-color: #008CBA;} /* Blue */
 .button3 {background-color: #f44336;} /* Red */

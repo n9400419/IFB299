@@ -14,5 +14,9 @@ urlpatterns = [
     url(r'^citymap/$', views_accounts.citymap_view, name='ViewCityMap'),
     url(r'^cityinformation/$', views_accounts.cityinformation_view, name='ViewCityInformation'),
     url(r'^logout/$', views_login.logout_view, name='Logout'),
+    url(r'^zoos/$', views_accounts.zoos_view, name='ViewZoos'),
+    url(r'^malls/$', views_accounts.malls_view, name='ViewMalls'),
+    url(r'^museums/$', views_accounts.museums_view, name='ViewMuseums'),
+    url(r'^restaurants/$', views_accounts.restaurants_view, name='ViewRestaurants'),
 
 ]
