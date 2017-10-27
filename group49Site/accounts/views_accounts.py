@@ -12,7 +12,7 @@ def signup(request):
             user.refresh_from_db()
         #    user.UserType.date_of_birth = form.cleaned_data.get('date_of_birth')
             user.first_name = form.cleaned_data.get('first_name')
-
+            #user.user_type = request.POST['user_type']
             username = form.cleaned_data.get('username')
             raw_password = form.cleaned_data.get('password1')
 
@@ -56,6 +56,10 @@ def citymap_view(request):
 def cityinformation_view(request):
 
     return render(request,'cityinformation.html')
+
+
+
+
 
 
 

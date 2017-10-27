@@ -4,7 +4,7 @@ from django.shortcuts import render_to_response, redirect
 from django.contrib.auth import get_user_model
 from django.http import HttpResponseRedirect
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 
 
 
@@ -39,7 +39,9 @@ def submit_login(request):
 
     return redirect("/login")
 
-
+def logout_view(request):
+    logout(request)
+    return redirect("/login")
 
 
 
