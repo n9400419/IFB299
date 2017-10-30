@@ -12,7 +12,8 @@ class SignUpForm(UserCreationForm):
     address = forms.CharField(max_length=30, required=True, help_text='Please put number and then street type.')
     date_of_birth = forms.CharField(max_length=50, required=True, help_text="Please put birthday as 'DD/MM/YYYY'")
     phone_number = forms.CharField(max_length=30, required=True,help_text='Please input a valid phone number')
-    user_type = forms.CharField(max_length=30)
+    user_type = forms.CharField(max_length=30, required=True, help_text="Please insert type: 'student', 'businessman', or 'tourist'")
+
 
     class Meta:
         model = User

@@ -6,6 +6,7 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
 
+
 {% block content %}
 <head>
     <meta charset="UTF-8">
@@ -21,11 +22,13 @@
             <a href="{% url 'ViewHotel' %}">VIEW HOTEL</a>
         {% endif %}
 
-         <a href="{% url 'ViewCityMap' %}">CITY MAP</a> <!--linking needs to be done-->
+         <a href="{% url 'ViewCityMap' %}">CITY MAP</a>
          <a href="{% url 'ViewCityInformation' %}">CITY INFORMATION</a> <!--linking needs to be done-->
+         <a href="{% url 'RequestAccess' %}">REQUEST ACCESS</a>
          <a href="{% url 'Logout' %}">LOGOUT</a>
 
     </div>
+</head>
 
 
     <form method="get" action="/accounts/profile/" class="navbar-form pull-right">
@@ -51,7 +54,8 @@
 
 
 
-    <h1>Welcome... {{ request.user.first_name }}</h1>
+    <h1>Welcome... {{ request.user.first_name }} </h1>
+    <h1>User type: {{ request.user.user_type }} </h1>
 
 
 <body>

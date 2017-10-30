@@ -18,5 +18,6 @@ urlpatterns = [
     url(r'^malls/$', views_accounts.malls_view, name='ViewMalls'),
     url(r'^museums/$', views_accounts.museums_view, name='ViewMuseums'),
     url(r'^restaurants/$', views_accounts.restaurants_view, name='ViewRestaurants'),
+    url(r'^request_access/$', views_accounts.request_access_view, name='RequestAccess'),
 
 ]

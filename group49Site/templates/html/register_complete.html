@@ -1,9 +1,11 @@
 {% extends "base.html" %}
-{% block title %}You are Registered{% endblock %}
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="../../static/base.css" />
 
 {% block content %}
 
-   <h2>Thank you for Registering</h2>   <p><a
- href="{% url 'Login' %}">Please Login</a></p>
+   <header>Thank you for Registering</header>
+<p><a href="{% url 'Login' %}">Please Login</a></p>
 
  {% endblock %}

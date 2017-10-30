@@ -19,7 +19,7 @@ def signup(request):
 
             user = authenticate(username=username, password=raw_password)
             login(request, user)
-            return redirect('Home')
+            return redirect('Success')
     else:
         form = SignUpForm()
     return render(request, 'register.html', {'form': form})
@@ -27,6 +27,10 @@ def signup(request):
 def profile_view(request):
 
     return render(request,'profile.html')
+
+def success_view(request):
+
+    return render(request,'register_complete.html')
 
 def hotel_view(request):
     results = Hotel.objects.all()[:5]
@@ -79,7 +83,8 @@ def restaurants_view(request) :
     return render(request, 'cityinformation.html', context)
 
 
-
+def request_access_view(request):
+    return render(request, 'requestaccess.html')
 
 
 

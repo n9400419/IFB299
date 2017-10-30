@@ -11,6 +11,7 @@ class User(AbstractUser):
     date_of_birth = models.CharField(max_length=50)
 
     user_type = models.CharField(max_length=50)
+    #request_access_type = models.CharField(max_length=50,default=user_type)
 
 
 
