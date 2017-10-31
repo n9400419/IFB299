@@ -56,11 +56,11 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'group49site.urls'
+ROOT_URLCONF = 'group49Site.urls'
 
 TEMPLATES = [
     {
-        #"/Users/Raj/Documents/IFB299/group49site/templates/html"
+        #"/Users/Raj/Documents/IFB299/group49Site/templates/html"
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR,'templates/html')],
         'APP_DIRS': True,
@@ -75,7 +75,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'group49site.wsgi.application'
+WSGI_APPLICATION = 'group49Site.wsgi.application'
 
 
 # Database
@@ -89,7 +89,7 @@ DATABASES = {
         'PORT': '3306',
         'USER': 'root',
         'PASSWORD': 'ChickenMuncher1',
-        
+
     }
 }
 
