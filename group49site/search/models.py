@@ -44,9 +44,13 @@ class Library(CityObject):
     
 class Industry(CityObject):
     industryType = models.CharField(max_length=20)
+    phoneNumber = models.CharField(max_length=10)
 
     def getIndustryType(self):
         return self.industryType
+
+    def getPhonenumber(self):
+        return self.phoneNumber
 
     
 class Hotel(CityObject):
