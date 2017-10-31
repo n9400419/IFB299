@@ -82,19 +82,16 @@ def restaurants_view(request) :
     context = {'results':results}
     return render(request, 'cityinformation.html', context)
 
-<<<<<<< HEAD
+
 def parks_view(request) :
     results = Park.objects.all()[:5]
     context = {'results':results}
     return render(request, 'cityinformation.html', context)
-=======
+
 
 def request_access_view(request):
     return render(request, 'requestaccess.html')
 
-
-
->>>>>>> 0e22f75735a8251d73d7f1ceecb03b246f86ff03
 
 
 

@@ -59,9 +59,18 @@
 
 
 <body>
-<p>{% for r in results %}
-{{ r.name }}
-{% endfor %}
+
+<p class = "information">
+    {% for r in results %}
+    <pre>
+    {{ r.name }} <br>
+    {{ r.address }} <br>
+    {{ r.phoneNumber}} <br>
+    {{ r.email}} <br>
+    {{ r.industryType}} <br>
+    {{ r.departments}} <br>
+    </pre>
+    {% endfor %}
 </p>
 
 

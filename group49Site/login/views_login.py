@@ -34,6 +34,7 @@ def submit_login(request):
     user = authenticate(username=username, password=password)
 
     if user is not None:
+        print("hhhhh")
         login(request, user)
         return redirect("/accounts/profile")
 
