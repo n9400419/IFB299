@@ -23,7 +23,7 @@ from django.conf import settings
 urlpatterns = [
     url(r'^home/', include('introduction_page.urls')),
     url(r'^login/', include('login.url_login')),
-    url(r'^search/', include('search.urls')),
+    url(r'^results/', include('search.urls')),
     url(r'^accounts/', include('accounts.urls')),
     url(r'^admin/', admin.site.urls),
 

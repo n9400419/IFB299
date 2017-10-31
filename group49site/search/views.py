@@ -28,6 +28,6 @@ def results(request):
     results = type_list[search_type].get_city_objects(search_type, type_list[search_type], query)
 
     context = {'results': results}
-    return render(request, 'search/results.html', context)
+    return render(request, 'results.html', context)
 
 

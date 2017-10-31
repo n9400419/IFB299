@@ -1,13 +1,11 @@
-
-
 {% extends 'base.html' %}
 {% block title %}PROFILE PAGE{% endblock %}
 
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
 
-
 {% block content %}
+
 <head>
     <meta charset="UTF-8">
     <div class="topnav_after">
@@ -53,13 +51,14 @@
     </form>
 
 
+<body>
+<p>{% for r in results %}
+{{ r.name }}
+{% endfor %}
+</p>
 
-    <h1>Welcome... {{ request.user.first_name }} </h1>
-    <h1>User type: {{ request.session.user_type }} </h1>
 
-
+</body>
 
 
 {% endblock %}
-
-

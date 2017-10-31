@@ -10,15 +10,6 @@ def signup(request):
         if form.is_valid():
             user = form.save()
             user.refresh_from_db()
-        #    user.UserType.date_of_birth = form.cleaned_data.get('date_of_birth')
-            user.first_name = form.cleaned_data.get('first_name')
-            #user.user_type = request.POST['user_type']
-            username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password1')
-
-
-            user = authenticate(username=username, password=raw_password)
-            login(request, user)
             return redirect('Success')
     else:
         form = SignUpForm()
@@ -78,13 +69,20 @@ def museums_view(request) :
     return render(request, 'cityinformation.html', context)
 
 def restaurants_view(request) :
-    results = Restarant.objects.all()[:5]
+    results = Restaurant.objects.all()[:5]
     context = {'results':results}
     return render(request, 'cityinformation.html', context)
 
 
 def request_access_view(request):
+
     return render(request, 'requestaccess.html')
+
+def change_user_type(request):
+
+    request.session['user_type'] = request.GET['user_type']
+    return render(request, 'profile.html')
+
 
 
 
