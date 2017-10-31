@@ -9,10 +9,4 @@ class User(AbstractUser):
     address = models.CharField(max_length=100)
     phone_number = models.CharField(max_length=50)
     date_of_birth = models.CharField(max_length=50)
-
-    user_type = models.CharField(max_length=50,choices=['Tourist','Student','Businessman'])
-
-
-
-
-	
+    user_type = models.CharField(max_length=50)
