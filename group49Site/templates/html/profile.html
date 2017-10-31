@@ -53,11 +53,7 @@
     </form>
 
 
-
-    <h1>Welcome... {{ request.user.first_name }} </h1>
-    <h1>User type: {{ request.session.user_type }} </h1>
-
-
+    <h1>Welcome {{ request.user.first_name }} </h1>
 
 
 <body>
@@ -67,15 +63,13 @@
     <pre>
     {{ r.name }} <br>
     {{ r.address }} <br>
-    {{ r.phoneNumber}} <br>
     {{ r.email}} <br>
-    {{ r.industryType}} <br>
-    {{ r.departments}} <br>
+    {{ r.phoneNumber}}<br>
+    {{ r.industryType}}{{ r.departments}} <br>
     </pre>
     {% endfor %}
 </p>
 
-</body>
 
 {% endblock %}
 
