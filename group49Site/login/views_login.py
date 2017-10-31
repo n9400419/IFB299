@@ -30,7 +30,7 @@ def submit_login(request):
     user = authenticate(username=username, password=password)
 
     if user is not None:
-        print("hhhhh")
+
         login(request, user)
         request.session['user_type']= user.user_type
         return redirect("/accounts/profile")

@@ -53,16 +53,24 @@
 <body>
 
 <p class = "information">
+
     {% for r in results %}
     <pre>
     {{ r.name }} <br>
     {{ r.address }} <br>
     {{ r.phoneNumber}} <br>
+    {% if r.websiteURL != null %}
+    <a href = "{{ r.websiteURL }}">Click here to visit the website</a><br>
+    {{ r.info }} <br>
+    {% endif %}
     {{ r.email}} <br>
     {{ r.industryType}} <br>
     {{ r.departments}} <br>
     </pre>
     {% endfor %}
+
+
+
 </p>
 
 </body>

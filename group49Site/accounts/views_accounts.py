@@ -73,6 +73,11 @@ def restaurants_view(request) :
     context = {'results':results}
     return render(request, 'cityinformation.html', context)
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 1d4f9e67279d062599a45dbc40ea40fcfa5b1c61
 def request_access_view(request):
 
     return render(request, 'requestaccess.html')
@@ -81,7 +86,10 @@ def parks_view(request) :
     results = Park.objects.all()[:5]
     context = {'results':results}
     return render(request, 'cityinformation.html', context)
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1d4f9e67279d062599a45dbc40ea40fcfa5b1c61
 
 def change_user_type(request):
 
