@@ -2,7 +2,7 @@ from django.contrib.auth import login, authenticate
 from django.shortcuts import render, redirect
 from .accounts_form import SignUpForm
 from .models import User
-from search.models import Hotel, College, Industry, Library, Zoo, Museum, Restaurant, Mall
+from search.models import Hotel, College, Industry, Library, Zoo, Museum, Restaurant, Mall, Park
 
 def signup(request):
     if request.method == 'POST':
@@ -74,9 +74,16 @@ def restaurants_view(request) :
     return render(request, 'cityinformation.html', context)
 
 
+<<<<<<< HEAD
 def request_access_view(request):
 
     return render(request, 'requestaccess.html')
+=======
+def parks_view(request) :
+    results = Park.objects.all()[:5]
+    context = {'results':results}
+    return render(request, 'cityinformation.html', context)
+>>>>>>> 3745998590aa9360fa084645848cb1fa6df0fa65
 
 def change_user_type(request):
 
@@ -85,6 +92,8 @@ def change_user_type(request):
 
 
 
+def request_access_view(request):
+    return render(request, 'requestaccess.html')
 
 
 

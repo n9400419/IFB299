@@ -59,7 +59,7 @@ class Hotel(CityObject):
 class CityInformation(CityObject):
     phoneNumber = models.CharField(max_length=10)
     websiteURL = models.CharField(max_length=100)
-    info = models.CharField(max_length=200)
+    info = models.CharField(max_length=1000)
 
     def getPhoneNumber(self):
         return self.phoneNumber
