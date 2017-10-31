@@ -25,18 +25,30 @@
 
 <body>
     <a href="{% url 'ViewZoos' %}" ><button class="button">Zoos</button></a>
+    <a href="{% url 'ViewParks' %}" ><button class="button">Parks</button></a>
     <a href="{% url 'ViewMalls' %}" ><button class="button">Malls</button></a>
     <a href="{% url 'ViewMuseums' %}" ><button class="button">Museums</button></a>
     <a href="{% url 'ViewRestaurants' %}" ><button class="button">Restaurants</button></a>
 
-<p>{% for r in results %}
-    {{ r.name }}
-    {{ r.address }}
+
+<!-- Display information on pages -->
+
+<p class = "information">
+    {% for r in results %}
+    <pre>
+
+    {{ r.name }} <br>
+    {{ r.address }} <br>
+    {{ r.phoneNumber}} <br>
+    <a href = "{{ r.websiteURL }}">Click here to visit the website</a><br>
+
+
+    {{ r.info }} <br>
+    </pre>
     {% endfor %}
 </p>
 
 </body>
-
 
 
 
