@@ -12,14 +12,14 @@ def signup(request):
             user.refresh_from_db()
         #    user.UserType.date_of_birth = form.cleaned_data.get('date_of_birth')
             user.first_name = form.cleaned_data.get('first_name')
-
+            #user.user_type = request.POST['user_type']
             username = form.cleaned_data.get('username')
             raw_password = form.cleaned_data.get('password1')
 
 
             user = authenticate(username=username, password=raw_password)
             login(request, user)
-            return redirect('Home')
+            return redirect('Success')
     else:
         form = SignUpForm()
     return render(request, 'register.html', {'form': form})
@@ -27,6 +27,10 @@ def signup(request):
 def profile_view(request):
 
     return render(request,'profile.html')
+
+def success_view(request):
+
+    return render(request,'register_complete.html')
 
 def hotel_view(request):
     results = Hotel.objects.all()[:5]
@@ -78,10 +82,19 @@ def restaurants_view(request) :
     context = {'results':results}
     return render(request, 'cityinformation.html', context)
 
+<<<<<<< HEAD
 def parks_view(request) :
     results = Park.objects.all()[:5]
     context = {'results':results}
     return render(request, 'cityinformation.html', context)
+=======
+
+def request_access_view(request):
+    return render(request, 'requestaccess.html')
+
+
+
+>>>>>>> 0e22f75735a8251d73d7f1ceecb03b246f86ff03
 
 
 

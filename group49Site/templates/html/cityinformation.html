@@ -10,14 +10,24 @@
 <head>
     <meta charset="UTF-8">
     <div class="topnav_after">
-         <a href="{% url 'Profile' %}">HOME</a>
-         <a href="{% url 'ViewHotel' %}">VIEW HOTEL</a>
-         <a href="{% url 'ViewCollege' %}">VIEW COLLEGE</a>
-         <a href="{% url 'ViewLibrary' %}">VIEW LIBRARY</a>
-         <a href="{% url 'ViewIndustry' %}">VIEW INDUSTRY</a>
-         <a href="{% url 'ViewCityMap' %}">CITY MAP</a> <!--linking needs to be done-->
+        <a href="{% url 'Profile' %}">HOME</a>
+        {% if request.user.user_type == 'student' %}
+            <a href="{% url 'ViewCollege' %}">VIEW COLLEGE</a>
+            <a href="{% url 'ViewLibrary' %}">VIEW LIBRARY</a>
+        {% elif request.user.user_type == 'businessman' %}
+            <a href="{% url 'ViewHotel' %}">VIEW HOTEL</a>
+            <a href="{% url 'ViewIndustry' %}">VIEW INDUSTRY</a>
+        {% elif request.user.user_type == 'tourist' %}
+            <a href="{% url 'ViewHotel' %}">VIEW HOTEL</a>
+        {% endif %}
+
+         <a href="{% url 'ViewCityMap' %}">CITY MAP</a>
          <a href="{% url 'ViewCityInformation' %}">CITY INFORMATION</a> <!--linking needs to be done-->
+         <a href="{% url 'RequestAccess' %}">REQUEST ACCESS</a>
+         <a href="{% url 'Logout' %}">LOGOUT</a>
+
     </div>
+</head>
 
 
 

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="../../static/base.css" />
+
+{% block content %}
+    <div class="topnav_after">
+<a href="{% url 'Profile' %}">HOME</a>
+    </div>
+    <header>Please select an option to unlock access to its respective information</header>
+
+<form method="get" action="/accounts/profile/" class="navbar-form pull-right">
+    <input type="text" id="requestaccess" class="input-medium search-query" name="query" placeholder="Search">
+        <select name="search_type">
+        {% if request.user.user_type == 'student' %}
+            <option value="businessman">Businessman</option>
+            <option value="tourist">Tourist</option>
+        {% elif request.user.user_type == 'businessman' %}
+            <option value="tourist">Tourist</option>
+            <option value="student">Student</option>
+        {% elif request.user.user_type == 'tourist' %}
+            <option value="student">Student</option>
+            <option value="businessman">Businessman</option>
+        {% endif %}
+
+     </select>
+    <input type="submit" class="btn" value="Search" >
+    </form>
+
+ {% endblock %}

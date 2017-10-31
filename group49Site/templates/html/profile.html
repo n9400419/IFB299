@@ -6,19 +6,56 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
 
+
 {% block content %}
 <head>
     <meta charset="UTF-8">
     <div class="topnav_after">
-         <a href="{% url 'Profile' %}">HOME</a>
-         <a href="{% url 'ViewHotel' %}">VIEW HOTEL</a>
-         <a href="{% url 'ViewCollege' %}">VIEW COLLEGE</a>
-         <a href="{% url 'ViewLibrary' %}">VIEW LIBRARY</a>
-         <a href="{% url 'ViewIndustry' %}">VIEW INDUSTRY</a>
+        <a href="{% url 'Profile' %}">HOME</a>
+        {% if request.user.user_type == 'student' %}
+            <a href="{% url 'ViewCollege' %}">VIEW COLLEGE</a>
+            <a href="{% url 'ViewLibrary' %}">VIEW LIBRARY</a>
+        {% elif request.user.user_type == 'businessman' %}
+            <a href="{% url 'ViewHotel' %}">VIEW HOTEL</a>
+            <a href="{% url 'ViewIndustry' %}">VIEW INDUSTRY</a>
+        {% elif request.user.user_type == 'tourist' %}
+            <a href="{% url 'ViewHotel' %}">VIEW HOTEL</a>
+        {% endif %}
+
          <a href="{% url 'ViewCityMap' %}">CITY MAP</a>
-         <a href="{% url 'ViewCityInformation' %}">CITY INFORMATION</a>
+         <a href="{% url 'ViewCityInformation' %}">CITY INFORMATION</a> <!--linking needs to be done-->
+         <a href="{% url 'RequestAccess' %}">REQUEST ACCESS</a>
+         <a href="{% url 'Logout' %}">LOGOUT</a>
+
     </div>
-    <h1>Welcome... {{ request.user.first_name }}</h1>
+</head>
+
+
+    <form method="get" action="/accounts/profile/" class="navbar-form pull-right">
+    <input type="text" id="searchBox" class="input-medium search-query" name="query" placeholder="Search">
+        <select name="search_type">
+        {% if request.user.user_type == 'student' %}
+            <option value="college">Colleges</option>
+            <option value="library">Libraries</option>
+        {% elif request.user.user_type == 'businessman' %}
+            <option value="industry">Industries</option>
+            <option value="hotel">Hotels</option>
+        {% elif request.user.user_type == 'tourist' %}
+            <option value="hotel">Hotels</option>
+        {% endif %}
+        <option value="park">Parks</option>
+        <option value="zoo">Zoos</option>
+        <option value="museum">Museums</option>
+        <option value="restaurant">Restaurants</option>
+        <option value="mall">Malls</option>
+     </select>
+    <input type="submit" class="btn" value="Search" >
+    </form>
+
+
+
+    <h1>Welcome... {{ request.user.first_name }} </h1>
+    <h1>User type: {{ request.user.user_type }} </h1>
 
 
 <body>
