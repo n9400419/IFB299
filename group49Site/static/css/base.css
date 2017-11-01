@@ -354,13 +354,33 @@ h2 .spacer {
   height: auto;
 }
 
+/*/ Results in Profile Page /*/
+
+.information h1 {
+    color: red;
+    font: 60px century gothic;
+    text-align: left;
+    position: absolute;
+    top: 200px;
+    left: 10px;
+}
+
+.information p {
+    color: red;
+    font: 25px century gothic;
+    text-align: center;
+    position: absolute;
+    top: 430px;
+    left: 60px;
+}
+
 
 
 .button {
     background-color: #4CAF50; /* Green */
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 15px 32px; 
     text-align: center;
     text-decoration: none;
     display: inline-block;
