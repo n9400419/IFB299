@@ -49,11 +49,7 @@ class Industry(CityObject):
     def getIndustryType(self):
         return self.industryType
 
-<<<<<<< HEAD
-    def getPhonenumber(self):
-=======
     def getPhoneNumber(self):
->>>>>>> 5b73baf73eba0dff917a8d1c995a7807f05dbcdc
         return self.phoneNumber
 
     
