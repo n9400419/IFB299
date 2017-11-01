@@ -8,8 +8,9 @@
     <a href="{% url 'Profile' %}">HOME</a>
     <a href="{% url 'Logout' %}">LOGOUT</a>
     </div>
+<br>
     <header>Please select an option to unlock access to its respective information</header>
-
+<br>
 <form method="get" action="/accounts/request_access_submit/" class="navbar-form pull-right">
         <select name="user_type">
         {% if request.session.user_type == 'student' %}
