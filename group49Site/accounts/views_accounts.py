@@ -79,8 +79,6 @@ def parks_view(request) :
     context = {'results':results}
     return render(request, 'cityinformation.html', context)
 
-
-
 def request_access_view(request):
 
     return render(request, 'requestaccess.html')

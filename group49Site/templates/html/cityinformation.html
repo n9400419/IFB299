@@ -45,16 +45,13 @@
 
 <p class = "information">
     {% for r in results %}
-    <pre>
 
     {{ r.name }} <br>
     {{ r.address }} <br>
     {{ r.phoneNumber}} <br>
     <a href = "{{ r.websiteURL }}">Click here to visit the website</a><br>
-
-
     {{ r.info }} <br>
-    </pre>
+    <br>
     {% endfor %}
 </p>
 

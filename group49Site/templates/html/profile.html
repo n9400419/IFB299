@@ -53,38 +53,35 @@
     </form>
 
 
-<<<<<<< HEAD
+
 
     <h1>Welcome {{ request.user.first_name }} </h1>
 
-
-
-=======
-    <h1>Welcome {{ request.user.first_name }} </h1>
-<<<<<<< HEAD
     <h1>User type: {{ request.session.user_type }} </h1>
-=======
->>>>>>> 5b73baf73eba0dff917a8d1c995a7807f05dbcdc
-
->>>>>>> 85c76a26d261e5011bfd07373a79db0b78533174
 
 <body>
 
 <p class = "information">
+
     {% for r in results %}
-    <pre>
-    {{ r.name }} <br>
-    {{ r.address }} <br>
-    {{ r.email}} <br>
-<<<<<<< HEAD
-    {{ r.phoneNumber}} <br>
-=======
-    {{ r.phoneNumber}}<br>
->>>>>>> 5b73baf73eba0dff917a8d1c995a7807f05dbcdc
-    {{ r.industryType}}{{ r.departments}} <br>
-    </pre>
+    <p>
+
+    {{ r.name }}<br>
+    {{ r.address }}<br>
+    {{ r.email}}<br>
+    {% if r.phoneNumber != null %}{{ r.phoneNumber }}<br>{% endif %}
+    {% if r.industryType != null %}{{ r.industryType }}<br>{% endif %}
+    {% if r.departments != null %}{{ r.departments }}<br>{% endif %}
+    {% if r.websiteURL != null %}<a href = "{{ r.websiteURL }}">Click here to visit the website</a><br>{{ r.info }}<br>{% endif %}
+    </p>
     {% endfor %}
+
+
+
 </p>
+
+</body>
+
 
 
 {% endblock %}

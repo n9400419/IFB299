@@ -1,9 +1,7 @@
 from django.test import TestCase
-from django.contrib.auth.forms import UserCreationForm
 from accounts.models import *
-from django.core.files import File
 from django.contrib import auth
-from login.views_login import *
+
 
 
 class LoginTest(TestCase):
